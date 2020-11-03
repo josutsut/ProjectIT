@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Easy Badminton</string>
+    <string name="log_in">Log In</string>
+    <string name="username">Username</string>
+    <string name="login">LOG IN</string>
+    <string name="password">Password</string>
+    <string name="here">"  here"</string>
+    <string name="register">Register</string>
+    <string name="address">Address</string>
+    <string name="email">E-mail</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="birtdate">Birthdate</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="logout">Logout</string>
+    <string name="setting">Setting</string>
+    <string name="change_password">Change Password</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="save">Save</string>
+    <string name="create_group">สร้างกลุ่ม</string>
+    <string name="find_group">Find Group</string>
+    <string name="select_play_date">เลือกวันและเวลาที่เล่นประจำกลุ่ม</string>
+    <string name="hind_groupname">ใส่ชื่อกลุ่ม</string>
+    <string name="mon">จ.</string>
+    <string name="tue">อ.</string>
+    <string name="wed">พ.</string>
+    <string name="thu">พฤ</string>
+    <string name="fri">ศ.</string>
+    <string name="sat">ส.</string>
+    <string name="sun">อา.</string>
+    <string name="begintime">เวลาเริ่มเล่น</string>
+    <string name="hint_duration">จำนวนชั่วโมง </string>
+    <string name="description">รายละเอียดเพิ่มเติม</string>
+</resources>

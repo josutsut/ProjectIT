@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.GroupFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#87DABE">
+
+        <LinearLayout
+            android:id="@+id/lnl_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#87DABE"
+            android:gravity="right"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_find_group"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@drawable/baseline_person_search_white_24dp" />
+
+            <Button
+                android:id="@+id/btn_create_group"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/baseline_group_add_white_24dp" />
+
+            <Button
+                android:id="@+id/btn_rereceive_group_request"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/outline_email_white_18dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnl_group_request"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/lnl_group"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:id="@+id/tv_group_request"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnl_join_group_request"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/lnl_group_request"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:id="@+id/tv_join_group_request"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnl_head_of"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/lnl_join_group_request"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:id="@+id/tv_head_of"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_group_detail"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/round_edit_white_18dp" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnl_member_of"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/lnl_head_of"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:id="@+id/tv_member_of"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycle_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#87DABE"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/lnl_member_of">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#87DABE"
+    tools:context=".activity.CreateGroupActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.659">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tv_create_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/create_group"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/et_find_group_for_create"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:ems="10"
+                    android:hint="@string/hind_groupname"
+                    android:inputType="textPersonName"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#FFFFFF"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_create_group" />
+
+                <Button
+                    android:id="@+id/btn_find_group_for_create"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/baseline_search_white_18dp"
+                    app:layout_constraintStart_toEndOf="@+id/et_find_group_for_create"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_create_group" />
+
+                <TextView
+                    android:id="@+id/tv_find_group_result"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="TextView"
+                    android:textColor="#EC877F"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/et_find_group_for_create" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/select_play_date"
+                    android:textColor="#FFFFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_find_group_result" />
+
+                <TableLayout
+                    android:id="@+id/tableLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView8">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <CheckBox
+                            android:id="@+id/cb_mon_group_create"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="#FFFFFF"
+                            android:text="@string/mon"
+                            android:textColor="#FFFFFFFF" />
+
+
+                        <com.santalu.maskedittext.MaskEditText
+                            android:id="@+id/et_mon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/begintime"
+                            android:backgroundTint="#FFFFFF"
+                            android:ems="7"
+                            android:inputType="time"
+                            android:textColor="#FFFFFF"
+                            android:textColorHint="#FFFFFFFF"
+                            android:textSize="14sp"
+                            app:met_mask="##:##" />
+
+
+
+                        <EditText
+                            android:id="@+id/et_mon_hr"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="#FFFFFF"
+                            android:ems="6"
+                            android:hint="@string/hint_duration"
+                            android:inputType="number"
+                            android:textColor="#FFFFFF"
+                            android:textColorHint="#FFFFFFFF"
+                            android:textSize="12sp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <CheckBox
+                            android:id="@+id/cb_tue_group_create"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="#FFFFFF"
+                            android:text="@string/tue"
+                            android:textColor="#FFFFFFFF" />
+
+
+                        <com.santalu.maskedittext.MaskEditText
+                            android:id="@+id/et_tue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="#FFFFFF"
+                            android:ems="7"
+                            android:inputType="time"
+                            android:textColor="#FFFFFF"
+                            android:textColorHint="#FFFFFFFF"
+                            android:textSize="14sp"
+                            app:met_mask="##:##" />
+
+
+                        <EditText
+                            android:id="@+id/et_tue_hr"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="#FFFFFF"
+                            android:ems="1"
+                            android:inputType="number"
+                            android:textColor="#FFFFFF" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <CheckBox
+                            android:id="@+id/cb_wed_group_create"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="#FFFFFF"
+                            android:text="@string/wed"
+                            android:textColor="#FFFFFFFF" />
+
+
+                        <com.santalu.maskedittext.MaskEditText
+                            android:id="@+id/et_wed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="#FFFFFF"
+                            android:ems="7"
+                            android:inputType="time"
+                            android:textColor="#FFFFFF"
+                            android:textColorHint="#FFFFFFFF"
+                            android:textSize="14sp"
+                            app:met_mask="##:##" />
+
+
+                        <EditText
+                            android:id="@+id/et_wed_hr"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="#FFFFFF"
+                            android:ems="6"
+                            android:inputType="number" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <CheckBox
+                            android:id="@+id/cb_thu_group_create"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="#FFFFFF"
+                            android:text="@string/thu"
+                            android:textColor="#FFFFFFFF" />
+
+                        <com.santalu.maskedittext.MaskEditText
+                            android:id="@+id/et_thu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="#FFFFFF"
+                            android:ems="7"
+                            android:inputType="time"
+                            android:textColor="#FFFFFF"
+                            android:textColorHint="#FFFFFFFF"
+                            android:textSize="14sp"
+                            app:met_mask="##:##" />
+
+                        <EditText
+                            android:id="@+id/et_thu_hr"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="#FFFFFF"
+                            android:ems="6"
+                            android:inputType="number"
+                            android:textColor="#FFFFFF" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        tools:layout_editor_absoluteY="258dp">
+
+                        <CheckBox
+                            android:id="@+id/cb_fri_group_create"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="#FFFFFF"
+                            android:text="@string/fri"
+                            android:textColor="#FFFFFFFF" />
+
+                        <com.santalu.maskedittext.MaskEditText
+                            android:id="@+id/et_fri"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="#FFFFFF"
+                            android:ems="7"
+                            android:inputType="time"
+                            android:textColor="#FFFFFF"
+                            android:textColorHint="#FFFFFFFF"
+                            android:textSize="14sp"
+                            app:met_mask="##:##" />
+
+
+                        <EditText
+                            android:id="@+id/et_fri_hr"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="#FFFFFF"
+                            android:ems="6"
+                            android:inputType="number" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <CheckBox
+                            android:id="@+id/cb_sat_group_create"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="#FFFFFF"
+                            android:text="@string/sat"
+                            android:textColor="#FFFFFFFF" />
+
+                        <com.santalu.maskedittext.MaskEditText
+                            android:id="@+id/et_sat"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="#FFFFFF"
+                            android:ems="7"
+                            android:inputType="time"
+                            android:textColor="#FFFFFF"
+                            android:textColorHint="#FFFFFFFF"
+                            android:textSize="14sp"
+                            app:met_mask="##:##" />
+
+                        <EditText
+                            android:id="@+id/et_sat_hr"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="#FFFFFF"
+                            android:ems="3"
+                            android:inputType="number"
+                            android:textColor="#FFFFFF" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <CheckBox
+                            android:id="@+id/cb_sun_group_create"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="#FFFFFF"
+                            android:text="@string/sun"
+                            android:textColor="#FFFFFFFF" />
+
+
+                        <com.santalu.maskedittext.MaskEditText
+                            android:id="@+id/et_sun"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="#FFFFFF"
+                            android:ems="7"
+                            android:inputType="time"
+                            android:textColor="#FFFFFF"
+                            android:textColorHint="#FFFFFFFF"
+                            android:textSize="14sp"
+                            app:met_mask="##:##" />
+
+                        <EditText
+                            android:id="@+id/et_sun_hr"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="#FFFFFF"
+                            android:ems="3"
+                            android:inputType="number"
+                            android:textColor="#FFFFFF" />
+                    </TableRow>
+
+                </TableLayout>
+
+
+                <EditText
+                    android:id="@+id/et_description_group_for_create"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:ems="12"
+                    android:hint="@string/description"
+                    android:inputType="textMultiLine"
+                    android:lines="4"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#FFFFFF"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+
+                <Button
+                    android:id="@+id/btn_create_group_after_result"
+                    android:layout_width="230dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/rounded_corners"
+                    android:elevation="50dp"
+                    android:text="@string/create_group"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/et_description_group_for_create" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+        
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
