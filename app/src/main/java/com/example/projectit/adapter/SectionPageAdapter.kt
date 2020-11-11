@@ -16,8 +16,8 @@ class SectionPageAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
     override fun getItem(position: Int): Fragment {
         when(position){
             0 -> return GroupFragment()
-            1 -> return PlayFragment()
-            2 -> return InvitationFragment()
+            1 -> return InvitationFragment()
+            2 -> return PlayFragment()
         }
         return null!!
     }
@@ -25,8 +25,8 @@ class SectionPageAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
     override fun getPageTitle(position: Int): CharSequence? {
         when(position){
             0 -> return "Group"
-            1 -> return "Play"
-            2 -> return "Invitation"
+            1 -> return "Invitation"
+            2 -> return "Play"
         }
         return null!!
     }

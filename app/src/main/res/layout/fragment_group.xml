@@ -34,105 +34,130 @@
                 android:layout_marginRight="20dp"
                 android:background="@drawable/baseline_group_add_white_24dp" />
 
-            <Button
-                android:id="@+id/btn_rereceive_group_request"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/outline_email_white_18dp" />
-
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/lnl_group_request"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@+id/lnl_group"
+            android:orientation="vertical"
             android:paddingHorizontal="16dp"
-            android:paddingTop="10dp">
+            android:paddingTop="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/lnl_group">
 
             <TextView
                 android:id="@+id/tv_group_request"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:text="@string/group_request"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <ListView
+                android:id="@+id/lv_group_request"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </ListView>
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/lnl_join_group_request"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@+id/lnl_group_request"
+            android:orientation="vertical"
             android:paddingHorizontal="16dp"
-            android:paddingTop="10dp">
+            android:paddingTop="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/lnl_group_request">
 
             <TextView
                 android:id="@+id/tv_join_group_request"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:text="@string/join_group_request"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <ListView
+                android:id="@+id/lv_join_group_request"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/lnl_head_of"
+            android:id="@+id/lnl_head_of0"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@+id/lnl_join_group_request"
+            android:orientation="vertical"
             android:paddingHorizontal="16dp"
-            android:paddingTop="10dp">
+            android:paddingTop="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/lnl_join_group_request">
 
             <TextView
-                android:id="@+id/tv_head_of"
-                android:layout_width="wrap_content"
+                android:id="@+id/tv_head_of0"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="TextView"
+                android:text="Group Head"
                 android:textColor="#FFFFFF"
-                android:textSize="18sp"
+                android:textSize="22sp"
                 android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/btn_group_detail"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/round_edit_white_18dp" />
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/lnl_head_of"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="TextView" />
+                android:orientation="horizontal"
+                android:paddingHorizontal="16dp">
+
+                <TextView
+                    android:id="@+id/tv_head_of"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="TextView"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btn_group_detail"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/round_edit_white_18dp" />
+
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/lnl_member_of"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@id/lnl_head_of"
-            android:paddingHorizontal="16dp"
-            android:paddingTop="10dp">
-
-            <TextView
-                android:id="@+id/tv_member_of"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycle_group"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#87DABE"
+            android:orientation="vertical"
             android:paddingHorizontal="16dp"
             android:paddingTop="10dp"
-            app:layout_constraintTop_toBottomOf="@+id/lnl_member_of">
+            app:layout_constraintTop_toBottomOf="@id/lnl_head_of0">
 
-        </androidx.recyclerview.widget.RecyclerView>
+            <TextView
+                android:id="@+id/tv_member_of_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/group"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycle_group"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="#87DABE">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

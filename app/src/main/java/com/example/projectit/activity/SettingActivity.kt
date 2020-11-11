@@ -33,7 +33,7 @@ class SettingActivity : AppCompatActivity() {
         content.setSpan(UnderlineSpan(), 0, underLineData.length, 0)
         btn_change_password.setText(content)
 
-        btn_save_setting.visibility = View.INVISIBLE
+        btn_save_setting.visibility = View.GONE
 
         mAuth = FirebaseAuth.getInstance()
         mDatabase = FirebaseDatabase.getInstance()

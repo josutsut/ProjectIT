@@ -1,8 +1,5 @@
 package com.example.projectit.activity
 
-import android.app.TimePickerDialog
-import android.content.Context
-import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,7 +7,6 @@ import android.view.View
 import android.widget.*
 import androidx.annotation.RequiresApi
 import com.example.projectit.R
-import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -18,14 +14,8 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.santalu.maskedittext.MaskEditText
 import kotlinx.android.synthetic.main.activity_create_group.*
-import kotlinx.android.synthetic.main.activity_register.*
-import java.sql.Time
-import java.text.SimpleDateFormat
-import java.time.LocalDate
-import java.time.LocalDateTime
 import java.time.LocalTime
 import java.time.format.DateTimeFormatter
-import java.util.*
 import kotlin.collections.HashMap
 
 class CreateGroupActivity : AppCompatActivity() {
@@ -41,7 +31,7 @@ class CreateGroupActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_group)
 
-        tv_find_group_result.visibility = View.INVISIBLE
+        tv_find_group_result.visibility = View.GONE
 
         mAuth = FirebaseAuth.getInstance()
         mDatabase = FirebaseDatabase.getInstance()
@@ -49,7 +39,7 @@ class CreateGroupActivity : AppCompatActivity() {
         var groupname = et_find_group_for_create.text.toString().trim()
 
         btn_find_group_for_create.setOnClickListener {
-            tv_find_group_result.visibility = View.INVISIBLE
+            tv_find_group_result.visibility = View.GONE
             groupname = et_find_group_for_create.text.toString().trim()
             var groupnameQuery = FirebaseDatabase.getInstance().getReference().child("Group")
                 .orderByChild("groupname").equalTo(groupname)
@@ -57,12 +47,12 @@ class CreateGroupActivity : AppCompatActivity() {
             groupnameQuery.addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(p0: DataSnapshot) {
                     if (p0.childrenCount > 0) {
-                        tv_find_group_result.setText("ชื่อกลุ่มถูกใช้ไปแล้ว กรุณาใช้ชื่อกลุ่มอื่น.")
+                        tv_find_group_result.setText("Group name already used. Please use other name.")
                         tv_find_group_result.visibility = View.VISIBLE
                         btn_create_group_after_result.isEnabled = false
-                        btn_create_group_after_result.visibility = View.INVISIBLE
+                        btn_create_group_after_result.visibility = View.GONE
                     } else {
-                        tv_find_group_result.visibility = View.INVISIBLE
+                        tv_find_group_result.visibility = View.GONE
                         btn_create_group_after_result.isEnabled = true
                         btn_create_group_after_result.visibility = View.VISIBLE
                     }
@@ -96,7 +86,7 @@ class CreateGroupActivity : AppCompatActivity() {
         }
 
 
-        var montime_begin_text = et_mon
+        var montime_begin_text = et_mon_begin
 //                        var duration = et_mon_hr.text.toString().toLong()
 //                        val formatter = DateTimeFormatter.ofPattern("HH:mm")
 //                        val montime_begin = LocalTime.parse(montime_begin_text.text.toString(), formatter)
@@ -105,9 +95,9 @@ class CreateGroupActivity : AppCompatActivity() {
 
         btn_create_group_after_result.setOnClickListener {
             var a=cb_mon_group_create
-            var montime_begin_text = et_mon
-            var b =et_mon_hr
-            et_description_group_for_create.setText(check_empty(cb_mon_group_create, et_mon, et_mon_hr).toString())
+            var montime_begin_text = et_mon_begin
+            var b =et_mon_end
+            et_description_group_for_create.setText(check_empty(cb_mon_group_create, et_mon_begin, et_mon_end).toString())
 
 
 //

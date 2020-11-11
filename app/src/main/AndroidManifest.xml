@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.ReceiveGroupActivity"></activity>
+        <activity android:name=".activity.SearchGroupActivity"></activity>
+        <activity android:name=".activity.ReceiveGroupActivity" />
         <activity
             android:name=".activity.AddGroupRequestActivity"
-            android:windowSoftInputMode="adjustResize"></activity>
+            android:windowSoftInputMode="adjustResize" />
         <activity android:name=".activity.GroupMemberActivity" />
         <activity android:name=".activity.GroupDetailActivity" />
         <activity android:name=".activity.CreateGroupActivity" />

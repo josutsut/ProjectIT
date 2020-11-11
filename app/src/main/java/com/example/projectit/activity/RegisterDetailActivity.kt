@@ -66,7 +66,7 @@ class RegisterDetailActivity : AppCompatActivity() {
                  checkFill = false
              } else {
                  if (password1.equals(password2)) {
-                     tv_password_result.visibility=View.INVISIBLE
+                     tv_password_result.visibility=View.GONE
                  } else {
                      tv_password_result.setText("Incorrect")
                      tv_password_result.visibility=View.VISIBLE
@@ -81,7 +81,7 @@ class RegisterDetailActivity : AppCompatActivity() {
                 tv_phone_result.visibility=View.VISIBLE
                 checkFill = false
             } else  {
-                tv_phone_result.visibility=View.INVISIBLE
+                tv_phone_result.visibility=View.GONE
             }
 
             var email=et_email.text.toString()
@@ -91,7 +91,7 @@ class RegisterDetailActivity : AppCompatActivity() {
                 checkFill = false
 
             } else  {
-                tv_email_result.visibility=View.INVISIBLE
+                tv_email_result.visibility=View.GONE
             }
 
             if (rdb_gender.checkedRadioButtonId==-1){
@@ -99,7 +99,7 @@ class RegisterDetailActivity : AppCompatActivity() {
                 tv_gender_result.visibility=View.VISIBLE
                 checkFill = false
             } else    {
-                tv_gender_result.visibility=View.INVISIBLE
+                tv_gender_result.visibility=View.GONE
             }
 
 //          แปลงRadioButton เป็น Male หรือ Female

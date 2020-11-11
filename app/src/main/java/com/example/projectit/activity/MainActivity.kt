@@ -26,7 +26,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        textView3.visibility = View.INVISIBLE
+
+
+        textView3.visibility = View.GONE
 
         mAuth = FirebaseAuth.getInstance()
 
@@ -63,7 +65,7 @@ class MainActivity : AppCompatActivity() {
             usernameQuery.addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(p0: DataSnapshot) {
                     if(p0.childrenCount>0){
-                        textView3.visibility = View.INVISIBLE
+                        textView3.visibility = View.GONE
                         var userIDArray = p0.value as HashMap<String,Any>
                         var userID = userIDArray.keys.elementAt(0)
                         var userRef = database!!.reference.child("Users").child(userID)

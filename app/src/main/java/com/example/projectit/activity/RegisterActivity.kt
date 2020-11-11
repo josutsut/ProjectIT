@@ -20,7 +20,7 @@ class RegisterActivity : AppCompatActivity() {
 
 
     fun registerDetailOnClick(view: View) {
-        tv_check_username.visibility=View.INVISIBLE
+        tv_check_username.visibility=View.GONE
         var database = FirebaseDatabase.getInstance()
         var username = et_username_check.text.toString().trim()
 
@@ -32,7 +32,7 @@ class RegisterActivity : AppCompatActivity() {
                     tv_check_username.setText("Already have usename.")
                     tv_check_username.visibility=View.VISIBLE
                 } else {
-                    tv_check_username.visibility=View.INVISIBLE
+                    tv_check_username.visibility=View.GONE
                     var registerDetailActivityIntent = Intent(this@RegisterActivity, RegisterDetailActivity::class.java)
                     registerDetailActivityIntent.putExtra("username",username)
                     startActivity(registerDetailActivityIntent)

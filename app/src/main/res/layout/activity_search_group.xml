@@ -8,11 +8,11 @@
     android:background="#87DABE">
 
     <TextView
-        android:id="@+id/tv_Search_User"
+        android:id="@+id/tv_search_group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:text="Search User"
+        android:text="Search Group"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
@@ -22,51 +22,51 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/et_search_user"
+        android:id="@+id/et_search_group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:backgroundTint="#FFFFFF"
         android:ems="10"
-        android:hint="@string/please_enter_username"
+        android:hint="Please Enter Groupname"
         android:inputType="textPersonName"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_Search_User" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_search_group" />
 
     <Button
-        android:id="@+id/btn_search_user"
+        android:id="@+id/btn_search_group"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="50dp"
         android:background="@drawable/baseline_search_white_18dp"
-        app:layout_constraintStart_toEndOf="@+id/et_search_user"
-        app:layout_constraintTop_toBottomOf="@+id/tv_Search_User" />
+        app:layout_constraintStart_toEndOf="@+id/et_search_group"
+        app:layout_constraintTop_toBottomOf="@+id/tv_search_group" />
 
     <TextView
-        android:id="@+id/tv_search_user_result"
+        android:id="@+id/tv_search_group_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_search_user" />
+        app:layout_constraintTop_toBottomOf="@+id/et_search_group"/>
 
     <Button
-        android:id="@+id/btn_add_group_request"
+        android:id="@+id/btn_add_join_group_request"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Add"
+        android:text="Join"
         android:textColor="#269127"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_search_user_result" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_search_group_result" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

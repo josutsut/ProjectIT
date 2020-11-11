@@ -1,14 +1,225 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.InvitationFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="#87DABE">
+
+        <TextView
+            android:id="@+id/tv_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="___________________________________________________________"
+            android:textAlignment="center"
+            android:textColor="#D6D6D6"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_court"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Court"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="32dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_1" />
+
+        <LinearLayout
+            android:id="@+id/lnl_reserve_court"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/tv_court">
+
+            <Button
+                android:id="@+id/btn_reserve_court"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="48dp"
+                android:text="Reserve Court"
+                android:textColor="#FFFFFF"
+                android:textSize="18dp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/btn_img_reserve_court"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginRight="18dp"
+                android:background="@drawable/baseline_storefront_white_24dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnl_reserve_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/lnl_reserve_court">
+
+            <Button
+                android:id="@+id/btn_reserve_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reserve List"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_marginLeft="48dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18dp"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/btn_img_reserve_list"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginRight="18dp"
+                android:background="@drawable/baseline_event_available_white_24dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:text="___________________________________________________________"
+            android:textAlignment="center"
+            android:textColor="#D6D6D6"
+            app:layout_constraintTop_toBottomOf="@+id/lnl_reserve_list" />
+
+        <TextView
+            android:id="@+id/tv_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Group"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="32dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_2" />
+
+        <LinearLayout
+            android:id="@+id/lnl_send_invitation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/tv_group">
+
+            <Button
+                android:id="@+id/btn_send_invitation"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="48dp"
+                android:text="Send Invitation"
+                android:textColor="#FFFFFF"
+                android:textSize="18dp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/btn_img_send_invitation"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginRight="18dp"
+                android:background="@drawable/baseline_send_white_24dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnl_group_invitation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/lnl_send_invitation">
+
+            <Button
+                android:id="@+id/btn_group_invitation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Group Invitation"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_marginLeft="48dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18dp"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/btn_img_group_invitation"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginRight="18dp"
+                android:background="@drawable/baseline_insert_invitation_white_24dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:text="___________________________________________________________"
+            android:textAlignment="center"
+            android:textColor="#D6D6D6"
+            app:layout_constraintTop_toBottomOf="@+id/lnl_group_invitation" />
+
+        <LinearLayout
+            android:id="@+id/lnl_invitation_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/tv_3">
+
+            <Button
+                android:id="@+id/btn_invitation_list"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32dp"
+                android:text="Invitation List"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/btn_img_invitation_list"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginRight="18dp"
+                android:background="@drawable/baseline_event_note_white_24dp" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </FrameLayout>

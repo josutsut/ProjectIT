@@ -26,51 +26,31 @@ class GroupMemberActivity : AppCompatActivity() {
         setContentView(R.layout.activity_group_member)
 
         var intent_groupid = intent.getStringExtra("groupid")
+        var intent_groupdata = intent.getSerializableExtra("groupdata") as HashMap<String,Any>
+        var member_username = ArrayList<String>()
+        var member_key = ArrayList<String>()
         mDatabase = FirebaseDatabase.getInstance()
-        mDatabase!!.reference.child("GroupMember").child(intent_groupid).addListenerForSingleValueEvent(object : ValueEventListener{
+        mDatabase!!.reference.child("Groupmember").orderByChild("groupid").equalTo(intent_groupid)
+            .addListenerForSingleValueEvent(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
-                if (snapshot!!.value != null) {
-
-                var groupmember_id = snapshot.value as HashMap<String,Array<String>>
-
-
-                    var array_groupmember_id = groupmember_id.keys
-
-                    var member_username = ArrayList<String>()
-
-                        for (member in array_groupmember_id) {
-                            mDatabase!!.reference.child("Users").child(member)
-                                .addValueEventListener(object : ValueEventListener {
-                                    override fun onDataChange(snapshot: DataSnapshot) {
-                                        member_username.add(snapshot!!.child("username").value.toString())
-                                        var listview_adapter: ArrayAdapter<String> = ArrayAdapter(
-                                            this@GroupMemberActivity,
-                                            android.R.layout.simple_list_item_1,
-                                            member_username
-                                        )
-                                        lv_members.adapter = listview_adapter
-                                    }
-
-                                    override fun onCancelled(error: DatabaseError) {
-                                        finish()
-                                    }
-                                })
-
-                        }
-
-
-                    lv_members.setOnItemClickListener { parent: AdapterView<*>?, view:View? , position: Int, id: Long ->
-                        var builder = AlertDialog.Builder(this@GroupMemberActivity)
-                        builder.setTitle("Delete member")
-
-                        builder.setPositiveButton("YES") { dialog, which ->
-                         var delete_member_data =   mDatabase!!.reference.child("GroupMember").child(intent_groupid).child(array_groupmember_id.elementAt(position))
-                         delete_member_data.removeValue()
-                            delete_member_data.addListenerForSingleValueEvent(object : ValueEventListener{
-                                override fun onDataChange(snapshot: DataSnapshot) {
-                                    member_username.removeAt(position)
-                                    var listview_adapter : ArrayAdapter<String> = ArrayAdapter(this@GroupMemberActivity,android.R.layout.simple_list_item_1,member_username)
-                                    lv_members.adapter = listview_adapter
+                snapshot.children.forEach {
+                    member_username.add(it.child("username").value.toString())
+                    member_key.add(it.key.toString())
+                }
+                var listview_adapter: ArrayAdapter<String> = ArrayAdapter(this@GroupMemberActivity,
+                    R.layout.simple_list_item_white, member_username)
+                lv_members.adapter = listview_adapter
+                lv_members.setOnItemClickListener { parent: AdapterView<*>?, view:View? , position: Int, id: Long ->
+                    var builder = AlertDialog.Builder(this@GroupMemberActivity)
+                    builder.setTitle("Delete member")
+                    builder.setPositiveButton("YES") { dialog, which ->
+                        var delete_member_data =   mDatabase!!.reference.child("Groupmember").child(member_key[position])
+                        delete_member_data.removeValue()
+                        delete_member_data.addListenerForSingleValueEvent(object : ValueEventListener{
+                            override fun onDataChange(snapshot: DataSnapshot) {
+                                member_username.removeAt(position)
+                                var listview_adapter : ArrayAdapter<String> = ArrayAdapter(this@GroupMemberActivity,R.layout.simple_list_item_white,member_username)
+                                lv_members.adapter = listview_adapter
                                     Toast.makeText(this@GroupMemberActivity,"Removed",Toast.LENGTH_LONG).show()
                                     }
 
@@ -87,8 +67,6 @@ class GroupMemberActivity : AppCompatActivity() {
                         dialog.show()
 
                     }
-
-                }
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -101,19 +79,9 @@ class GroupMemberActivity : AppCompatActivity() {
         btn_add_groupmember.setOnClickListener {
             var intent = Intent(this,AddGroupRequestActivity::class.java)
             intent.putExtra("groupid",intent_groupid)
+            intent.putExtra("groupdata",intent_groupdata)
             startActivity(intent)
-
-
         }
-
-
-
-
-
-
-
-
-
 
     }
 }
